@@ -26,10 +26,25 @@ class Panda(object):
                 f"Is sleeping: {self.is_sleeping}, is eating: {self.is_eating}, is playing: {self.is_playing}, is sick: {self.is_sick}\n"
     
     def panda_live(self):
-        self.age += 0.2
-        self.happiness -= 0.2
-        self.food -= 0.5
-        self.tired += 0.2
+        if self.age + 0.2 > 100:
+            self.age = 0
+        else:
+            self.age += 0.2
+
+        if self.food - 0.5 < 0:
+            self.food = 0
+        else:
+            self.food -= 0.5
+
+        if self.happiness - 0.2 < 0:
+            self.happiness = 0
+        else:
+            self.happiness -= 0.2
+
+        if self.tired + 0.2 > 100:
+            self.tired = 100
+        else:
+            self.tired += 0.2
 
     def cookings(self):
         self.food += 10
