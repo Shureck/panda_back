@@ -17,7 +17,7 @@ services:
   front:
     image: shureck/panda_front:latest
     volumes:
-      - '.:/app'
+      - '/app'
       - '/app/node_modules'
     ports:
       - 3001:3000
