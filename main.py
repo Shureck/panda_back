@@ -26,7 +26,7 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
-app.mount('/ws', sio_app)
+app.mount('/api/ws', sio_app)
 
 # Принять подключение к сокету
 @sio.on
@@ -35,12 +35,12 @@ async def connect(sid, environ):
 
 
 # Вернуть index.html
-@app.get("/")
+@app.get("/api")
 async def get_main_page():
     await sio.emit('FromAPI', 80)
     return "Lol"
 
-@app.get("/button")
+@app.get("/api/button")
 async def get_button_click(text: str):
     pet_live.panda.panda_eat()
     try:
