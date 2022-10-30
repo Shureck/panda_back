@@ -8,10 +8,10 @@ panda = panda.Panda()
 def panda_live():
     while panda.is_alive:
         panda.panda_live()
-        if panda.food <= 0:
-            panda.is_alive = False
-        if panda.happiness <= 0:
-            panda.is_alive = False
+        # if panda.food <= 0:
+        #     panda.is_alive = False
+        # if panda.happiness <= 0:
+        #     panda.is_alive = False
         if panda.tired >= 100:
             panda.is_tired = True
         if panda.food <= 50:
